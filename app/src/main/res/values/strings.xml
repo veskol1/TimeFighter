@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Time Fighter</string>
+    <string name="your_score">Your Score:</string>
+    <string name="time_left">Time Left:</string>
+    <string name="press_me_button">Press Me</string>
+    <string name="start_game">Start Game!</string>
+    <string name="game_over">Game Over</string>
+
+</resources>
