@@ -2,6 +2,7 @@
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -36,9 +37,9 @@ import androidx.appcompat.app.AppCompatActivity
         timeLeftTextView = findViewById<TextView>(R.id.time_left_text_View)
         startGameButtun = findViewById<Button>(R.id.start_game_button)
 
-
+        Log.d("check commit","commit check")
         if(savedInstanceState != null) {
-            score= savedInstanceState.getInt(SCORE_KEY);
+            score= savedInstanceState.getInt(SCORE_KEY)
             timeLeftOnTimer = savedInstanceState.getLong(TIME_LEFT_KEY)
             gameStarted = savedInstanceState.getBoolean(GAME_STATUS_KEY)
             initializeGame(timeLeftOnTimer)
@@ -94,7 +95,7 @@ import androidx.appcompat.app.AppCompatActivity
 
      private fun increaseScore(){
          score++
-         val newScore:String = "${getString(R.string.your_score)} ${score.toString()}"
+         val newScore = "${getString(R.string.your_score)} ${score.toString()}"
          myScoreTextView.setText(newScore)
      }
 
