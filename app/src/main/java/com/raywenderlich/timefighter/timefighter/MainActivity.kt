@@ -74,15 +74,15 @@ import androidx.appcompat.app.AppCompatActivity
 
 
      private fun initializeGame(timeLeft : Long){
-         myScoreTextView.setText("your score ${score.toString()}")
+         myScoreTextView.text = getString(R.string.your_score)
          var timeLeftOnTimerBase10 = timeLeft/1000
-         timeLeftTextView.setText("Time Left: ${timeLeftOnTimerBase10.toString()}")
+         timeLeftTextView.text = ("Time Left: $timeLeftOnTimerBase10")
 
          countDownTimer = object : CountDownTimer(timeLeft,countDownInterval){
              override fun onTick(millisUntilFinished: Long) {
                  timeLeftOnTimer=millisUntilFinished  //updated for onsaveInstance
                  timeLeftOnTimerBase10= millisUntilFinished /1000
-                 timeLeftTextView.setText("Time Left: ${timeLeftOnTimerBase10.toString()}")
+                 timeLeftTextView.text = ("Time Left: $timeLeftOnTimerBase10 ")
              }
              override fun onFinish() {
                  endGame()
@@ -95,8 +95,8 @@ import androidx.appcompat.app.AppCompatActivity
 
      private fun increaseScore(){
          score++
-         val newScore = "${getString(R.string.your_score)} ${score.toString()}"
-         myScoreTextView.setText(newScore)
+         val newScore = "${getString(R.string.your_score)} $score "
+         myScoreTextView.text = ("$newScore ")
      }
 
 
