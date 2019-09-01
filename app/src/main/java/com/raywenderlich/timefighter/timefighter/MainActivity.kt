@@ -99,7 +99,7 @@ import androidx.appcompat.app.AppCompatActivity
 
      private fun increaseScore(){
          score++
-         myScoreTextView.text = "${getString(R.string.your_score)} $score "
+         myScoreTextView.text = ("${getString(R.string.your_score)} $score ")
      }
 
 
