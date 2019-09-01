@@ -37,7 +37,6 @@ import androidx.appcompat.app.AppCompatActivity
         timeLeftTextView = findViewById<TextView>(R.id.time_left_text_View)
         startGameButtun = findViewById<Button>(R.id.start_game_button)
 
-        Log.d("check commit","commit check")
         if(savedInstanceState != null) {
             score= savedInstanceState.getInt(SCORE_KEY)
             timeLeftOnTimer = savedInstanceState.getLong(TIME_LEFT_KEY)
@@ -50,10 +49,15 @@ import androidx.appcompat.app.AppCompatActivity
          startGameButtun.setOnClickListener { view ->
              if(!gameStarted)
                 startGame(countDownLength)
+             else
+                 Toast.makeText(this,"Game already started",Toast.LENGTH_SHORT).show()
          }
          pressMeButton.setOnClickListener { view ->
-             increaseScore()
-        }
+             if(gameStarted)
+                increaseScore()
+             else
+                Toast.makeText(this,"Game not started yet",Toast.LENGTH_SHORT)
+                        .show()         }
     }
 
 
@@ -95,8 +99,7 @@ import androidx.appcompat.app.AppCompatActivity
 
      private fun increaseScore(){
          score++
-         val newScore = "${getString(R.string.your_score)} $score "
-         myScoreTextView.text = ("$newScore ")
+         myScoreTextView.text = "${getString(R.string.your_score)} $score "
      }
 
 
