@@ -3,6 +3,7 @@
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -53,6 +54,8 @@ import androidx.appcompat.app.AppCompatActivity
                  Toast.makeText(this,"Game already started",Toast.LENGTH_SHORT).show()
          }
          pressMeButton.setOnClickListener { view ->
+             val bounceAnimation = AnimationUtils.loadAnimation(this,R.anim.bounce)
+             view.startAnimation(bounceAnimation)
              if(gameStarted)
                 increaseScore()
              else
