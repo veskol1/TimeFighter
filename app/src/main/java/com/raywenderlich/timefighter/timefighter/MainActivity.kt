@@ -78,7 +78,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
      private fun initializeGame(timeLeft : Long){
-         myScoreTextView.text = getString(R.string.your_score)
+         myScoreTextView.text = ("${getString(R.string.your_score)} $score")
          var timeLeftOnTimerBase10 = timeLeft/1000
          timeLeftTextView.text = ("Time Left: $timeLeftOnTimerBase10")
 
